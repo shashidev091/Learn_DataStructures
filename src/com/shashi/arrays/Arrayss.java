@@ -1,6 +1,4 @@
-package com.arrays;
-
-import java.util.Arrays;
+package com.shashi.arrays;
 
 public class Arrayss extends CustomArray {
     int[] numbers = {1, 2, 3, 4, 5};

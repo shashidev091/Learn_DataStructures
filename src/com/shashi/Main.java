@@ -1,6 +1,6 @@
 package com.shashi;
 
-import com.arrays.Arrayss;
+import com.shashi.arrays.Arrayss;
 
 public class Main {
 
