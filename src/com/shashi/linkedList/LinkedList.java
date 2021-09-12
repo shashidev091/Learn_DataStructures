@@ -22,6 +22,7 @@ public class LinkedList {
 
     private Node first;
     private Node last;
+    private int size;
 
     public void addLast(int item) {
 //        Node node = new Node();
@@ -35,6 +36,7 @@ public class LinkedList {
             last.next = node;
             last = node;
         }
+        size++;
     }
 
     public void addFirst(int item) {
@@ -46,6 +48,8 @@ public class LinkedList {
             node.next = first;
             first = node;
         }
+
+        size++;
     }
 
     public boolean isEmpty() {
@@ -80,6 +84,7 @@ public class LinkedList {
         var second = first.next;
         first.next = null;
         first = second;
+        size--;
     }
 
     public void removeLast() {
@@ -87,11 +92,12 @@ public class LinkedList {
 
         if (first == last) {
             first = last = null;
+            size = 0;
             return;
         }
         last = getPrevious(last);
         last.next = null;
-
+        size--;
     }
 
     private Node getPrevious(Node node) {
@@ -101,5 +107,9 @@ public class LinkedList {
             current = current.next;
         }
         return null;
+    }
+
+    public int size() {
+        return size;
     }
 }

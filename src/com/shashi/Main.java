@@ -54,7 +54,6 @@ public class Main {
         list.addLast(2);
 
         System.out.println(list.contains(3));
-
-
+        System.out.println(list.size());
     }
 }
