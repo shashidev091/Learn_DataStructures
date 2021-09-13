@@ -112,4 +112,27 @@ public class LinkedList {
     public int size() {
         return size;
     }
+
+    public void reverse() {
+        Node previous = first;
+        var current = first.next;
+        while(current != null) {
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        last = first;
+        last.next = null;
+        first = previous;
+    }
+
+    @Override
+    public String toString() {
+        return "LinkedList{" +
+                "first=" + first +
+                ", last=" + last +
+                ", size=" + size +
+                '}';
+    }
 }

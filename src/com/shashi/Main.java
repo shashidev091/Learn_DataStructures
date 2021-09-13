@@ -52,8 +52,12 @@ public class Main {
         LinkedList list = new LinkedList();
         list.addLast(1);
         list.addLast(2);
+        list.addLast(5);
+        list.addLast(7);
 
         System.out.println(list.contains(3));
         System.out.println(list.size());
+        list.reverse();
+        System.out.println(list);
     }
 }
