@@ -106,7 +106,19 @@ public class Main {
         myLinkedList.add(5);
         myLinkedList.addFirst(10);
         myLinkedList.add(2);
-        myLinkedList.set(2, 55);
+//        myLinkedList.set(2, 55);
+
+//        myLinkedList.print();
+
+//        myLinkedList.reverse();
+//
+//        System.out.println("-------------");
+//
+//        myLinkedList.print();
+
+        myLinkedList.reverseSecond();
+
+        System.out.println("-------------");
 
         myLinkedList.print();
     }

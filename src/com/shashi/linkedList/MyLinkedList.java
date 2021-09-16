@@ -1,5 +1,4 @@
 package com.shashi.linkedList;
-import java.util.LinkedList;
 
 public class MyLinkedList {
     Node head;
@@ -43,23 +42,24 @@ public class MyLinkedList {
 
         int findindex = 0;
         var current = head;
-        Node prevuios = null;
+        Node nextNode = null;
 
         while (current != null) {
             if (findindex == index) {
                break;
             }
             findindex++;
-            prevuios = current;
+
             current = current.next;
         }
 
-        Node temp = current;
-//        if(prevuios != null) {
-//            System.out.println(prevuios.data);
-//        }
-        newItem.next = current;
-        prevuios.next = newItem;
+        if (current == null) {
+            return;
+        }
+
+        nextNode = current.next;
+        current.next = newItem;
+        newItem.next = nextNode;
 
     }
 
@@ -69,6 +69,41 @@ public class MyLinkedList {
             System.out.println(current.data);
             current = current.next;
         }
+    }
+
+    public void reverse() {
+        var current = head;
+
+        Node tempNode = null;
+        Node lastNode = null;
+        while (current != null ) {
+            lastNode = current;
+            current = current.next;
+        }
+
+        if( lastNode != null ) {
+            tempNode = head;
+            head = lastNode;
+            lastNode = tempNode;
+
+        }
+
+
+
+    }
+
+    public void reverseSecond() {
+        var previous = head;
+        var current = head.next;
+
+        while ( current != null ) {
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        head = previous;
     }
 
     private boolean isEmpty() {
@@ -82,6 +117,14 @@ public class MyLinkedList {
         public Node(int data) {
             this.data = data;
             this.next = null;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "data=" + data +
+                    ", next=" + next +
+                    '}';
         }
     }
 }
