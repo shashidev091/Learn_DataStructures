@@ -1,6 +1,7 @@
 package com.shashi;
 
 import com.shashi.arrays.Arrayss;
+import com.shashi.arrays.KadanesAlgorithm;
 import com.shashi.linkedList.LinkedList;
 import com.shashi.linkedList.MyLinkedList;
 import com.shashi.stacks.Stacks;
@@ -100,12 +101,12 @@ public class Main {
 //        System.out.println(isBalanced);
 
         // Again Linked List training
-        MyLinkedList  myLinkedList = new MyLinkedList();
-        myLinkedList.add(3);
-        myLinkedList.add(4);
-        myLinkedList.add(5);
-        myLinkedList.addFirst(10);
-        myLinkedList.add(2);
+//        MyLinkedList  myLinkedList = new MyLinkedList();
+//        myLinkedList.add(3);
+//        myLinkedList.add(4);
+//        myLinkedList.add(5);
+//        myLinkedList.addFirst(10);
+//        myLinkedList.add(2);
 //        myLinkedList.set(2, 55);
 
 //        myLinkedList.print();
@@ -116,10 +117,18 @@ public class Main {
 //
 //        myLinkedList.print();
 
-        myLinkedList.reverseSecond();
+//        myLinkedList.reverseSecond();
+//
+//        System.out.println("-------------");
+//
+//        myLinkedList.print();
 
-        System.out.println("-------------");
+        /*
+         * Kadane's Algorithm
+         */
 
-        myLinkedList.print();
+        KadanesAlgorithm kadanesAlgorithm = new KadanesAlgorithm();
+        int[] input = {1,6,32,-66,42,-3,22};
+        System.out.println("Max sum of sub is  => " + kadanesAlgorithm.findMaxSumSubArray(input));
     }
 }
